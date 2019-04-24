@@ -39,7 +39,9 @@ class App extends Component {
             return (
               <Gallery
                 thumb={image.urls.thumb}
+                description={image.alt_description}
                 name={image.user.name}
+                location={image.user.location}
                 key={image.id} />
             )
           })}
