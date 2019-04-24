@@ -1,15 +1,13 @@
 import React from 'react';
 
-class Gallery extends React.Component {
-    render() {
-        const { username, url, location, photos } = this.props;
-        let photos = [];
-        return (
-            <div className="photo__gallery">
-                <div className="image-container">
-                    <img src={photos} />
-                </div>
-            </div>
-        );
-    }
+const Gallery = props => {
+    return (
+        <div>
+            <img src={props.thumb} />
+            <h3>{props.name}</h3>
+            <h3>{props.location}</h3>
+        </div>
+    )
 }
+
+export default Gallery;

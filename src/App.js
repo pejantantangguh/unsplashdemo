@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Gallery from './Components/Gallery';
 import Unsplash, { toJson } from 'unsplash-js';
 
 const unsplash = new Unsplash({
@@ -13,21 +14,18 @@ class App extends Component {
     super(props);
 
     this.state = {
-      media: []
+      images: []
     };
   }
 
 
   componentDidMount() {
-    unsplash.photos.getRandomPhoto()
+    unsplash.photos.listPhotos(2, 15, "latest")
       .then(toJson)
       .then(async json => {
-        // let media = [json.]
-
-        let media = await [json];
-        console.log(media);
+        let images = await json;
         this.setState({
-          media
+          images
         })
       });
   }
@@ -35,10 +33,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Hello World</p>
-        {/* <img src={this.state.media} alt="" /> */}
+        <div>
+          {this.state.images.map(image => {
+            console.log(image);
+            return (
+              <Gallery
+                thumb={image.urls.thumb}
+                name={image.user.name}
+                key={image.id} />
+            )
+          })}
+        </div>
         <pre>
           <code>{JSON.stringify(this.state, null, 2)}</code>
+
         </pre>
       </div>
     );
