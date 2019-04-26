@@ -24,6 +24,7 @@ class Image extends Component {
             .then(toJson)
             .then(async json => {
                 let images = await json;
+                console.log(images)
                 this.setState({
                     images
                 })
@@ -37,8 +38,8 @@ class Image extends Component {
                     {this.state.images.map(image => {
                         return (
 
-                            <Gallery className="mw9 center cf"
-                                thumb={image.urls.thumb}
+                            <Gallery
+                                thumb={image.urls.small}
                                 description={image.alt_description}
                                 name={image.user.name}
                                 location={image.user.location}
