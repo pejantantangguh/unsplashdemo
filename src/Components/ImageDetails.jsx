@@ -32,7 +32,11 @@ class ImageDetails extends React.Component {
         return (
             <div>
                 <div className="mw5 mw7-ns center bg-light-gray pa3 ph5-ns dim">
-                    <img src={media} alt={imageName} className="mt0" />
+                    <img src={media} alt={imageName} className="mt0 db ba b--black-10" />
+                    <dl className="mt2 f6 lh-copy">
+                        <dt className="clip">Title</dt>
+                        <dt className="ml0">{photographerName}</dt>
+                    </dl>
                 </div >
             </div>
         )
