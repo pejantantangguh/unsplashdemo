@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Image from '../src/Components/Image';
 import { Router, Link } from "@reach/router";
 import ImageDetails from './Components/ImageDetails';
+import SearchParams from './Components/SearchParams';
 
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
         <Router>
           <Image path="/" />
           <ImageDetails path="/details/:id" />
+          <SearchParams path="/search-params" />
         </Router>
       </div>
     )
