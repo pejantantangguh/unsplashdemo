@@ -37,14 +37,13 @@ class Image extends Component {
                 <div>
                     {this.state.images.map(image => {
                         return (
-
                             <Gallery
                                 thumb={image.urls.small}
                                 description={image.alt_description}
                                 name={image.user.name}
                                 location={image.user.location}
-                                key={image.id} />
-
+                                key={image.id}
+                                id={image.id} />
                         )
                     })}
                 </div>
