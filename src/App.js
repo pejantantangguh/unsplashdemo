@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Image from '../src/Components/Image';
 import { Router, Link } from "@reach/router";
 import ImageDetails from './Components/ImageDetails';
